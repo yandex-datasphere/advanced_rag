@@ -1,0 +1,72 @@
+<svg version="1.1" baseProfile="full" width="419.0" height="160.0" viewBox="0 0 419 160" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<desc >#direction: right
+	
+	[&lt;start&gt;начало] -&gt; [&lt;choice&gt;NER] -&gt; [Graph RAG] -&gt; [&lt;end&gt;конец]
+	[NER] -&gt; [Simple RAG] -&gt; [конец]
+	</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+			<g stroke="transparent" fill="transparent">
+				<rect x="0.0" y="0.0" height="160.0" width="419.0" stroke="none"></rect>
+			</g>
+			<g transform="translate(8, 8)" fill="#33322E">
+				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+					<path d="M30.0 52.0 L50 52 L63.333333333333336 52 L63.3 52.0 " fill="none"></path>
+					<path d="M56.7 57.3 L63.3 52.0 L56.7 46.7 L70.0 52.0 Z"></path>
+					<path d="M145.0 28.5 L165 16 L180.83333333333334 16 L180.8 16.0 " fill="none"></path>
+					<path d="M174.2 21.3 L180.8 16.0 L174.2 10.7 L187.5 16.0 Z"></path>
+					<path d="M290.5 16.0 L313 16 L328.76947737805466 32.22003387457046 L328.8 32.2 " fill="none"></path>
+					<path d="M320.3 31.2 L328.8 32.2 L327.9 23.7 L333.4 37.0 Z"></path>
+					<path d="M145.0 75.5 L165 88 L178.33333333333334 88 L178.3 88.0 " fill="none"></path>
+					<path d="M171.7 93.3 L178.3 88.0 L171.7 82.7 L185.0 88.0 Z"></path>
+					<path d="M293.0 88.0 L313 88 L328.76947737805466 71.77996612542954 L328.8 71.8 " fill="none"></path>
+					<path d="M327.9 80.3 L328.8 71.8 L320.3 72.8 L333.4 67.0 Z"></path>
+					<g data-name="начало">
+						<g fill="#33322E" stroke="#33322E" data-name="начало">
+							<circle r="12.0" cx="15.0" cy="52.0" stroke="none" data-name="начало"></circle>
+						</g>
+					</g>
+					<g data-name="NER">
+						<g fill="#eee8d5" stroke="#33322E" data-name="NER">
+							<path d="M107.5 28.0 L145.0 52.0 L107.5 76.0 L70.0 52.0 Z" data-name="NER"></path>
+						</g>
+						<g transform="translate(82.5, 36)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="NER">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="NER">
+								<text x="17.0" y="14.1" stroke="none" text-anchor="middle" data-name="NER">NER</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Graph RAG">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Graph RAG">
+							<rect x="187.5" y="0.0" height="32.0" width="103.0" data-name="Graph RAG"></rect>
+						</g>
+						<g transform="translate(187.5, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Graph RAG">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Graph RAG">
+								<text x="43.5" y="14.1" stroke="none" text-anchor="middle" data-name="Graph RAG">Graph RAG</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="конец">
+						<g fill="#33322E" stroke="#33322E" data-name="конец">
+							<circle r="10.0" cx="348.0" cy="52.0" data-name="конец"></circle>
+							<circle r="6.0" cx="348.0" cy="52.0" stroke="none" data-name="конец"></circle>
+						</g>
+					</g>
+					<g data-name="Simple RAG">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Simple RAG">
+							<rect x="185.0" y="72.0" height="32.0" width="108.0" data-name="Simple RAG"></rect>
+						</g>
+						<g transform="translate(185, 72)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Simple RAG">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Simple RAG">
+								<text x="46.0" y="14.1" stroke="none" text-anchor="middle" data-name="Simple RAG">Simple RAG</text>
+								
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

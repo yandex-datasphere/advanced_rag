@@ -1,0 +1,156 @@
+<svg version="1.1" baseProfile="full" width="857.5" height="336.0" viewBox="0 0 857.5 336" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+	<desc >#direction: right
+	[&lt;choice&gt;Classifier] etc -&gt; [&lt;choice&gt;Term NER] yes -&gt; [Graph RAG] -&gt; [&lt;end&gt;конец]
+	[&lt;choice&gt;Term NER] no -&gt; [Simple RAG] -&gt; [&lt;end&gt;конец]
+	[&lt;choice&gt;Food NER] no -&gt; [Term NER]
+	[&lt;start&gt;начало] -&gt; [&lt;choice&gt;Classifier] find_wine -&gt; [&lt;choice&gt;Food NER] yes -&gt; [Wine Reasoner] -&gt; [&lt;end&gt;конец]
+	[Classifier] find_food -&gt; [&lt;choice&gt;Wine NER] yes -&gt; [Food Reasoner] -&gt; [конец]
+	[Wine NER] no -&gt; [Term NER]</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+		<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+			<g stroke="transparent" fill="transparent">
+				<rect x="0.0" y="0.0" height="336.0" width="857.5" stroke="none"></rect>
+			</g>
+			<g transform="translate(8, 8)" fill="#33322E">
+				<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+					<text x="124.0" y="88.0" stroke="none">etc</text>
+					<path d="M155.1 96.0 L222 12 L311.75 12 L311.75 12 L401.5 12 L401.5 12 L453.79082739534766 51.952542279591505 L453.8 52.0 " fill="none"></path>
+					<path d="M445.3 52.1 L453.8 52.0 L451.7 43.7 L459.1 56.0 Z"></path>
+					<text x="489.2" y="48.0" stroke="none">yes</text>
+					<path d="M523.9 56.0 L579.5 16 L607.3333333333334 16 L607.3 16.0 " fill="none"></path>
+					<path d="M600.7 21.3 L607.3 16.0 L600.7 10.7 L614.0 16.0 Z"></path>
+					<path d="M717.0 16.0 L751.5 16 L781.1330958330911 134.53238333236445 L781.1 134.5 " fill="none"></path>
+					<path d="M774.3 129.4 L781.1 134.5 L784.7 126.8 L782.8 141.0 Z"></path>
+					<text x="529.7" y="124.0" stroke="none">no</text>
+					<path d="M557.3 104.0 L579.5 112 L604.8333333333334 112 L604.8 112.0 " fill="none"></path>
+					<path d="M598.2 117.3 L604.8 112.0 L598.2 106.7 L611.5 112.0 Z"></path>
+					<path d="M719.5 112.0 L751.5 112 L770.4180247127049 135.78265963882902 L770.4 135.8 " fill="none"></path>
+					<path d="M762.1 133.9 L770.4 135.8 L770.4 127.2 L774.6 141.0 Z"></path>
+					<text x="333.2" y="88.0" stroke="none">no</text>
+					<path d="M360.7 96.0 L401.5 76 L414.84005630659686 76.59955309243132 L414.8 76.6 " fill="none"></path>
+					<path d="M407.9 81.6 L414.8 76.6 L408.4 71.0 L421.5 76.9 Z"></path>
+					<path d="M30.0 120.0 L50 120 L63.333333333333336 120 L63.3 120.0 " fill="none"></path>
+					<path d="M56.7 125.3 L63.3 120.0 L56.7 114.7 L70.0 120.0 Z"></path>
+					<text x="210.0" y="140.0" stroke="none">find_wine</text>
+					<path d="M202.0 120.0 L222 120 L235.33333333333334 120 L235.3 120.0 " fill="none"></path>
+					<path d="M228.7 125.3 L235.3 120.0 L228.7 114.7 L242.0 120.0 Z"></path>
+					<text x="310.7" y="164.0" stroke="none">yes</text>
+					<path d="M345.4 144.0 L401.5 184 L490.5 184 L490.5 184 L579.5 184 L579.5 184 L593.3333333333334 184 L593.3 184.0 " fill="none"></path>
+					<path d="M586.7 189.3 L593.3 184.0 L586.7 178.7 L600.0 184.0 Z"></path>
+					<path d="M731.0 184.0 L751.5 184 L766.2942079370465 172.16463365036282 L766.3 172.2 " fill="none"></path>
+					<path d="M764.4 180.5 L766.3 172.2 L757.8 172.2 L771.5 168.0 Z"></path>
+					<text x="76.6" y="164.0" stroke="none">find_food</text>
+					<path d="M157.5 144.0 L222 216 L236.08333333333334 216 L236.1 216.0 " fill="none"></path>
+					<path d="M229.4 221.3 L236.1 216.0 L229.4 210.7 L242.8 216.0 Z"></path>
+					<text x="321.9" y="260.0" stroke="none">yes</text>
+					<path d="M356.6 240.0 L401.5 264 L490.5 264 L490.5 264 L579.5 264 L579.5 264 L592.8333333333334 264 L592.8 264.0 " fill="none"></path>
+					<path d="M586.2 269.3 L592.8 264.0 L586.2 258.7 L599.5 264.0 Z"></path>
+					<path d="M731.5 264.0 L751.5 264 L779.5836269794559 177.34195103482188 L779.6 177.3 " fill="none"></path>
+					<path d="M782.6 185.3 L779.6 177.3 L772.5 182.0 L781.6 171.0 Z"></path>
+					<text x="314.1" y="184.0" stroke="none">no</text>
+					<path d="M341.7 192.0 L401.5 144 L451.71246500897416 107.89215999354667 L451.7 107.9 " fill="none"></path>
+					<path d="M449.4 116.1 L451.7 107.9 L443.2 107.5 L457.1 104.0 Z"></path>
+					<g data-name="Classifier">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Classifier">
+							<path d="M136.0 96.0 L202.0 120.0 L136.0 144.0 L70.0 120.0 Z" data-name="Classifier"></path>
+						</g>
+						<g transform="translate(92, 104)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Classifier">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Classifier">
+								<text x="36.0" y="14.1" stroke="none" text-anchor="middle" data-name="Classifier">Classifier</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Term NER">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Term NER">
+							<path d="M490.5 56.0 L559.5 80.0 L490.5 104.0 L421.5 80.0 Z" data-name="Term NER"></path>
+						</g>
+						<g transform="translate(444.5, 64)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Term NER">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Term NER">
+								<text x="38.0" y="14.1" stroke="none" text-anchor="middle" data-name="Term NER">Term NER</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Graph RAG">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Graph RAG">
+							<rect x="614.0" y="0.0" height="32.0" width="103.0" data-name="Graph RAG"></rect>
+						</g>
+						<g transform="translate(614, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Graph RAG">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Graph RAG">
+								<text x="43.5" y="14.1" stroke="none" text-anchor="middle" data-name="Graph RAG">Graph RAG</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="конец">
+						<g fill="#33322E" stroke="#33322E" data-name="конец">
+							<circle r="10.0" cx="786.5" cy="156.0" data-name="конец"></circle>
+							<circle r="6.0" cx="786.5" cy="156.0" stroke="none" data-name="конец"></circle>
+						</g>
+					</g>
+					<g data-name="Simple RAG">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Simple RAG">
+							<rect x="611.5" y="96.0" height="32.0" width="108.0" data-name="Simple RAG"></rect>
+						</g>
+						<g transform="translate(611.5, 96)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Simple RAG">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Simple RAG">
+								<text x="46.0" y="14.1" stroke="none" text-anchor="middle" data-name="Simple RAG">Simple RAG</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Food NER">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Food NER">
+							<path d="M311.8 96.0 L381.5 120.0 L311.8 144.0 L242.0 120.0 Z" data-name="Food NER"></path>
+						</g>
+						<g transform="translate(265.25, 104)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Food NER">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Food NER">
+								<text x="38.5" y="14.1" stroke="none" text-anchor="middle" data-name="Food NER">Food NER</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="начало">
+						<g fill="#33322E" stroke="#33322E" data-name="начало">
+							<circle r="12.0" cx="15.0" cy="120.0" stroke="none" data-name="начало"></circle>
+						</g>
+					</g>
+					<g data-name="Wine Reasoner">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Wine Reasoner">
+							<rect x="600.0" y="168.0" height="32.0" width="131.0" data-name="Wine Reasoner"></rect>
+						</g>
+						<g transform="translate(600, 168)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Wine Reasoner">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Wine Reasoner">
+								<text x="57.5" y="14.1" stroke="none" text-anchor="middle" data-name="Wine Reasoner">Wine Reasoner</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Wine NER">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Wine NER">
+							<path d="M311.8 192.0 L380.8 216.0 L311.8 240.0 L242.8 216.0 Z" data-name="Wine NER"></path>
+						</g>
+						<g transform="translate(265.75, 200)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Wine NER">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Wine NER">
+								<text x="38.0" y="14.1" stroke="none" text-anchor="middle" data-name="Wine NER">Wine NER</text>
+								
+							</g>
+						</g>
+					</g>
+					<g data-name="Food Reasoner">
+						<g fill="#eee8d5" stroke="#33322E" data-name="Food Reasoner">
+							<rect x="599.5" y="248.0" height="32.0" width="132.0" data-name="Food Reasoner"></rect>
+						</g>
+						<g transform="translate(599.5, 248)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Food Reasoner">
+							<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Food Reasoner">
+								<text x="58.0" y="14.1" stroke="none" text-anchor="middle" data-name="Food Reasoner">Food Reasoner</text>
+								
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
