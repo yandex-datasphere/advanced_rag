@@ -1,0 +1,2053 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#"
+     xml:base="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food">
+        <owl:imports rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine"/>
+        <rdfs:comment>
+      Derived from the DAML Wine ontology at 
+      http://ontolingua.stanford.edu/doc/chimaera/ontologies/wines.daml
+      Substantially modified.
+    </rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#course -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#course">
+        <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink">
+        <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood">
+        <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#madeFromFruit -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#madeFromFruit">
+        <rdfs:domain rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ConsumableThing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fruit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFish -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFish">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fish"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFish"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFishCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFishCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFish"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Delicate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#CheeseNutsDessert -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#CheeseNutsDessert">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dessert"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessert"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#CheeseNutsDessertCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#CheeseNutsDessertCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#CheeseNutsDessert"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ConsumableThing -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ConsumableThing"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DarkMeatFowl -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DarkMeatFowl">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fowl"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DarkMeatFowlCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DarkMeatFowlCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DarkMeatFowl"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Light"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Delicate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dessert -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dessert">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fowl"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fruit"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meat"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFood"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DessertCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DessertCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dessert"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Full"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Strong"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Sweet"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EatingGrape -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EatingGrape">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Grape"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ConsumableThing"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meal"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fish -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fish">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Shellfish"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FishCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FishCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fish"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fowl -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fowl">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fruit"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meat"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFood"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fruit -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fruit">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSweetFruit"/>
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meat"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFood"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FruitCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FruitCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fruit"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Grape -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Grape">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Juice -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Juice">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#madeFromFruit"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowl -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowl">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fowl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowlCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowlCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowl"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meal -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meal">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ConsumableThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#course"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#course"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ConsumableThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Wine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meat -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meat">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFood"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFish -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFish">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fish"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFishCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFishCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFish"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonConsumableThing -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonConsumableThing">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ConsumableThing"/>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfish -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfish">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Shellfish"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OysterShellfish"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfishCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfishCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfish"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonRedMeat -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonRedMeat">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meat"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonRedMeatCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonRedMeatCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonRedMeat"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Strong"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeat -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeat">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeat"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeatCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeatCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeat"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate"/>
+                                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Strong"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSweetFruit -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSweetFruit">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSweetFruitCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSweetFruitCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSweetFruit"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Delicate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OffDry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFood -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFood">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFoodCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFoodCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFood"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OysterShellfish -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OysterShellfish">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Shellfish"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OysterShellfishCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OysterShellfishCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OysterShellfish"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Sweet"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithHeavyCreamCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithHeavyCreamCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithHeavyCreamSauce"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithHeavyCreamSauce -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithHeavyCreamSauce">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithWhiteSauce"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithLightCreamSauce"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithLightCreamCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithLightCreamCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithLightCreamSauce"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Light"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Delicate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithLightCreamSauce -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithLightCreamSauce">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithWhiteSauce"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithNonSpicyRedSauce -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithNonSpicyRedSauce">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithRedSauce"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithSpicyRedSauce"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithNonSpicyRedSauceCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithNonSpicyRedSauceCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithNonSpicyRedSauce"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithRedSauce -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithRedSauce">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithWhiteSauce"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithSpicyRedSauce -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithSpicyRedSauce">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithRedSauce"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithSpicyRedSauceCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithSpicyRedSauceCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithSpicyRedSauce"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Full"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Strong"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithWhiteSauce -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithWhiteSauce">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ConsumableThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeat -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeat">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeatCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeatCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeat"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SeafoodCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SeafoodCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Shellfish -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Shellfish">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ShellfishCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ShellfishCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Shellfish"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate"/>
+                                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Strong"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Full"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeat -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeat">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeatCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeatCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeat"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Full"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessert -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessert">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dessert"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessertCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessertCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessert"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruitCourse -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruitCourse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink"/>
+                <owl:allValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar"/>
+                        <owl:hasValue rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Sweet"/>
+                    </owl:Restriction>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Wine -->
+
+    <owl:Class rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Wine">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine -->
+
+    <rdf:Description rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Bananas -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Bananas">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BeefCurry -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BeefCurry">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Cake -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Cake">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessert"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Cheese -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Cheese">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#CheeseNutsDessert"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Chicken -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Chicken">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Clams -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Clams">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Crab -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Crab">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Delicate -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Delicate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Duck -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Duck">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DarkMeatFowl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FettucineAlfRedo -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FettucineAlfRedo">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithHeavyCreamSauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Flounder -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Flounder">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FraDiavolo -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FraDiavolo">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithSpicyRedSauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Full -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Full">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#GarlickyRoast -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#GarlickyRoast">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Goose -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Goose">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DarkMeatFowl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Halibut -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Halibut">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Light -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Light">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Lobster -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Lobster">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MixedFruit -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MixedFruit">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Mussels -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Mussels">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Nuts -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Nuts">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#CheeseNutsDessert"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OffDry -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OffDry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Oysters -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Oysters">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OysterShellfish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithWhiteClamSauce -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithWhiteClamSauce">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithLightCreamSauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Peaches -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Peaches">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pie -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pie">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessert"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pizza">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pork -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pork">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonRedMeat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RoastBeef -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RoastBeef">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Rose -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Rose">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Rose"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Scrod -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Scrod">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpaghettiWithTomatoSauce -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpaghettiWithTomatoSauce">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithNonSpicyRedSauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Steak -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Steak">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Strong -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Strong">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Sweet -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Sweet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Swordfish -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Swordfish">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ThompsonSeedless -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ThompsonSeedless">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EatingGrape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Tuna -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Tuna">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Turkey -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Turkey">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Veal -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Veal">
+        <rdf:type rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White -->
+
+    <owl:Thing rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <owl:sameAs rdf:resource="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Rose -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Rose"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet"/>
+    
+
+
+    <!-- http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi -->
+
