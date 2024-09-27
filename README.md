@@ -14,6 +14,8 @@
 
 * [SMILES 2024](https://smiles.skoltech.ru/). Летняя школа машинного обучения Skoltech. 
 * Yandex Practical ML Conf 2024: Дмитрий Сошников, Дмитрий Рыбалко. Разные (мультиагентные) подходы для работы с LLM в Yandex Cloud [слайды](https://speakerdeck.com/shwars/raznyie-multiaghientnyie-podkhody-dlia-raboty-s-llm-v-yandex-cloud)
+* [PiterPy 2024](https://piterpy.com/talks/0402f75733044a9bbe2e8adecb6afb03/) [слайды](https://speakerdeck.com/shwars/vopros-otvietnyie-sistiemy-v-oblakie-yandex-cloud-na-osnovie-prodvinutogho-rag-i-mnoghoaghientnosti)
+* [Стачка SPb 2024](https://spb24.nastachku.ru/) [слайды](https://speakerdeck.com/shwars/stachka-vopros-otvietnyie-sistiemy-v-oblakie-yandex-cloud-na-osnovie-prodvinutogho-rag-i-mnoghoaghientnosti)
 
 ### Ссылки
 
